@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Docker_DB_Container</RootNamespace>
+    <UserSecretsId>8b99865d-2084-4038-819f-59128aca74cb</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Docker\Bash\entrypoint.sh\**" />
+    <Compile Remove="Docker\Bash\waitforsqlserverandcreatedb.sh\**" />
+    <Content Remove="Docker\Bash\entrypoint.sh\**" />
+    <Content Remove="Docker\Bash\waitforsqlserverandcreatedb.sh\**" />
+    <EmbeddedResource Remove="Docker\Bash\entrypoint.sh\**" />
+    <EmbeddedResource Remove="Docker\Bash\waitforsqlserverandcreatedb.sh\**" />
+    <None Remove="Docker\Bash\entrypoint.sh\**" />
+    <None Remove="Docker\Bash\waitforsqlserverandcreatedb.sh\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Docker\Bash\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DockerDbContainer.Infrastructure.Database\DockerDbContainer.Infrastructure.Database.csproj" />
+  </ItemGroup>
+
+</Project>
