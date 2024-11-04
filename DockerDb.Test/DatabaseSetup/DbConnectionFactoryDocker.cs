@@ -7,7 +7,7 @@ namespace Test.DatabaseSetup;
 
 public class DbConnectionFactoryDocker : IDbConnectionFactory
 {
-    private const string ImageName = "mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04";
+    private const string ImageName = "mcr.microsoft.com/mssql/server:2019-latest";
     private const ushort MssqlPort = 1433;
     private const string Username = "sa";
     private const string Password = "myStr0ng!&Passw0rd!";

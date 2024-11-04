@@ -27,10 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Docker\Bash\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DockerDbContainer.Infrastructure.Database\DockerDbContainer.Infrastructure.Database.csproj" />
   </ItemGroup>
 
